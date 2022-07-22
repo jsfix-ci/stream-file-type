@@ -10,7 +10,7 @@ export default class FileType extends Transform {
 
     this[kStream] = new PassThrough()
 
-    this[kResult] = fileType.fromStream(this[kStream]).then(
+    this[kResult] = fileType.fileTypeFromStream(this[kStream]).then(
       (value) => {
         this[kStream] = null
         this.emit('file-type', value || null)
